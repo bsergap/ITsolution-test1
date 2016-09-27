@@ -1,0 +1,15 @@
+<?php
+ini_set("mysqli.default_host", "");
+ini_set("mysqli.default_user", "");
+ini_set("mysqli.default_pw", "");
+//////////////////////////////////////////////////
+spl_autoload_register(function($class) {
+    $class = strtr($class, array('\\' => DIRECTORY_SEPARATOR));
+    include_once __DIR__.DIRECTORY_SEPARATOR.$class.'.php';
+});
+//////////////////////////////////////////////////
+#TODO: CREATE DATABASE `ITsolution`;
+try
+	\Core\DB\Adapter::connect('ITsolution');
+catch (Exception $e)
+	echo "Need to install the 'ITsolution' database! {$e->getMessage()}";
