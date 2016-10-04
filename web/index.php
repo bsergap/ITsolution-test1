@@ -27,7 +27,7 @@ switch($_GET['action']) { // Switch of tasks, 4testing
 }
 ?>
 
-<form action="/" method="POST" id="data-form">
+<form action="" method="POST" id="data-form">
 	<input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf'];?>">
 	<table>
 <?php
